@@ -1,7 +1,14 @@
 {% extends "Library/base.html" %}
 
 {% block content %}
-	<article>
-		Your Mum
-	</article>
+    {% for game in games %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ game.library }}</a>
+            </div>
+            <h2><a class="article-title" href="#">{{ game.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
 {% endblock content %}
