@@ -21,7 +21,7 @@ class GameDetailView(DetailView):
 
 class GameCreateView(LoginRequiredMixin, CreateView):
 	model = Game
-	fields = ['title', 'platform', 'genre', 'release_date', 'no_players', 'publisher']
+	fields = ['title', 'platform', 'genre', 'release_date', 'no_players', 'publisher', 'box_art']
 
 
 	def form_valid(self, form):
