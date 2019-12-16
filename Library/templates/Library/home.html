@@ -1,14 +1,24 @@
 {% extends "Library/base.html" %}
 
 {% block content %}
-    {% for game in games %}
+    
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ game.library }}</a>
+              {% for game in games %} 
+                {% if user.is_authenticated and game.library == user %}
+                
+                  <a class="mr-2">Library Owner: {{ game.library }}</a>
+                  <h2><a class="article-title" href="{% url 'game-detail' game.id %}">{{ game.title }}</a></h2>
+                
+                {% else %}
+                  
+                {% endif %}
+              
+              {% endfor %}
+              
             </div>
-            <h2><a class="article-title" href="#">{{ game.title }}</a></h2>
           </div>
         </article>
-    {% endfor %}
+
 {% endblock content %}
