@@ -1,7 +1,24 @@
 {% extends "Library/base.html" %}
 
 {% block content %}
-	<article>
-		Your Mum
-	</article>
+    
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              {% if user.is_authenticated %}
+                <a class="mr-2">Library Owner: {{ user.username }}</a>
+                  {% if game.library == user %}
+                    {% for game in games %} 
+                      <h2><a class="article-title" href="{% url 'game-detail' game.id %}">{{ game.title }}</a></h2>
+                    {% endfor %}
+                  {% else %}
+                    <h4>Please <a href="{% url 'game-create' %}">add a game </a>to begin your library </h4> 
+                  {% endif %}  
+              {% else %}
+                <h4>Please <a href="{% url 'login' %}">Log in </a>to view your library </h4>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+
 {% endblock content %}

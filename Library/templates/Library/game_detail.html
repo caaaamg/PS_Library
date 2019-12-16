@@ -1,0 +1,25 @@
+{% extends "Library/base.html" %}
+
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">Game Owner: {{ object.library }}</a>
+        {% if object.library == user %}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'game-update' object.id %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'game-delete' object.id %}">Delete</a>
+        </div>
+        {% endif %}
+
+      </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p>Platform: {{ object.platform }} </p>  
+      <p>Genre: {{ object.genre }} </p>  
+      <p>Release Date: {{ object.release_date|date:"d F Y" }} </p>  
+      <p>No. Players: {{ object.no_players }} </p>  
+      <p>Publisher: {{ object.publisher }} </p>  
+      <img class="rounded" src="{{ object.box_art.url }}">
+    </div>
+  </article>
+{% endblock content %}
