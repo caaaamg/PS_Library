@@ -7,7 +7,7 @@
             <div class="article-metadata">
               {% if user.is_authenticated %}
                 <a class="mr-2">Library Owner: {{ user.username }}</a>
-                  {% if game.library == user %}
+                  {% if game.library == User %}
                     {% for game in games %} 
                       <h2><a class="article-title" href="{% url 'game-detail' game.id %}">{{ game.title }}</a></h2>
                     {% endfor %}
