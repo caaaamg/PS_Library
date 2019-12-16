@@ -13,6 +13,11 @@ User_Profile handled modelling for a user, creating the forms to handle the the 
 
 Library controlled the modelling for the games and the links to the users profile. ClassViews took over the early functional views made in master, making greater usage of the django libraries available. Conditionals were introduced to limit what was available for one user to view, putting the focus on their own libraries. 
 
+## Deliverable
+The delivered solution sets out to meet the requirements given. 
+It functionally enables a user to create and maintain their own game library, with the data being handled through SQLite.
+The users themselves are able to create their own profile which owns the associated library, with django enabling authentification and validation to be done automatically within the necessary proccesses.
+
 
 ## Further Work
 Improvements are always possible and this project is no different. There are known bugs within, such as the release date being in the required format YYYY-MM-DD, or the game updates not giving the option to update box art. 
