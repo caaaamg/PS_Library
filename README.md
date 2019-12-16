@@ -17,6 +17,8 @@ Library controlled the modelling for the games and the links to the users profil
 The delivered solution sets out to meet the requirements given. 
 It functionally enables a user to create and maintain their own game library, with the data being handled through SQLite.
 The users themselves are able to create their own profile which owns the associated library, with django enabling authentification and validation to be done automatically within the necessary proccesses.
+### Footage
+Please follow this link to access the screenshots and video demo: https://drive.google.com/drive/folders/1lQezvg0QVy-YVJ2qkjH3XOVydIEOQ0qb?usp=sharing
 
 
 ## Further Work
